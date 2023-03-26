@@ -78,16 +78,6 @@ namespace Idt {
             __asm__ volatile("cli");
 
             printf("exception has occurred!\n%s\n\n", messages[regs->intNo]);
-	        printf("dump:\n");
-	        printf("sizeof: %d\n", sizeof(*regs));
-	        printf("rax=%x rbx=%x rcx=%x rdx=%x\n", regs->rax, regs->rbx, regs->rcx, regs->rdx);
-	        printf("rdi=%x rsi=%x rbp=%x rsp=%x\n", regs->rdi, regs->rsi, regs->rbp, regs->rsp);
-	        printf("r8=%x r9=%x r10=%x r11=%x\n", 	regs->r8,  regs->r9,  regs->r10, regs->r11);
-	        printf("r12=%x r13=%x r14=%x r15=%x\n", regs->r12, regs->r13, regs->r14, regs->r15);
-
-	        printf("rip=%x rflags=%x rsp=%x\n", regs->rip, regs->rflags, regs->rsp);
-	        printf("cs=%x ss=%x\n", regs->cs, regs->ss);
-	        printf("int_no=%x err_code=%x\n", regs->intNo, regs->err);
 
             for (;;) __asm__ volatile("hlt");
         }

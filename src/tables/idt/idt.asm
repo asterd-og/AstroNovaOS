@@ -4,9 +4,9 @@ extern intHandler
 intStub%+%1:
     push 0
     push %1
-    pusha
+    pushad
     call intHandler
-    popa
+    popad
     iret
 %endmacro
 
